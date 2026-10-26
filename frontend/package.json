@@ -1,6 +1,7 @@
 {
-  "name": "chat-gpt",
-  "version": "0.1.0",
+  "name": "agro-assist-frontend",
+  "version": "1.0.0",
+  "description": "Enterprise AI-Powered Agricultural Advisory Web Client",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",

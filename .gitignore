@@ -24,6 +24,7 @@ pnpm-debug.log*
 # Environment files
 .env
 .env.*
+!.env.example
 
 # Build / dist output
 dist/

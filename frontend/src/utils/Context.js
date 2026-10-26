@@ -63,9 +63,6 @@ function AppContext({ children }) {
     };
     const botMessageTemplate = { text: "", isBot: true };
 
-    const currentChatValue = chatValue; // Store before clearing state
-    const currentSelectedImage = selectedImage; // Store before clearing state
-
     // Capture the history *before* adding the new messages
     const historyForApi = [...message, userMessage];
 
@@ -183,7 +180,15 @@ function AppContext({ children }) {
     } finally {
       setLoading(false);
     }
-  }, [message]); // Added message dependency
+  }, [message]);
+
+  const handleNewChat = useCallback(() => {
+    setMessage([]);
+    setChatValue("");
+    setSelectedImage(null);
+    setPreviewImage(null);
+    setLoading(false);
+  }, []);
 
   const contextValue = {
     showSlide, setShowSlide,
@@ -193,10 +198,10 @@ function AppContext({ children }) {
     message, setMessage,
     msgEnd,
     handleSend, handleKeyPress, handleQuery,
+    handleNewChat,
     // Add image state and setter
     selectedImage, setSelectedImage,
     previewImage, setPreviewImage
-    // Removed language state/setter
   };
 
   return (
