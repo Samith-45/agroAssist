@@ -4,8 +4,9 @@
   "private": true,
   "description": "AgroAssist Root Monorepo Workspace",
   "scripts": {
-    "start": "npm start --prefix frontend",
-    "dev": "npm start --prefix frontend",
+    "start": "node start-dev.js",
+    "dev": "node start-dev.js",
+    "test": "npm test --prefix backend",
     "start:frontend": "npm start --prefix frontend",
     "start:backend": "npm start --prefix backend",
     "dev:backend": "npm run dev --prefix backend",
