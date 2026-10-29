@@ -29,7 +29,7 @@ const SAMPLE_QUERIES = [
 ];
 
 function Mobile() {
-  const { Mobile: isMobileOpen, setMobile, handleQuery, handleNewChat } = useContext(ContextApp);
+  const { Mobile: isMobileOpen, setMobile, handleSend, handleNewChat } = useContext(ContextApp);
 
   if (!isMobileOpen) return null;
 
@@ -77,8 +77,8 @@ function Mobile() {
               <button
                 key={index}
                 type="button"
-                onClick={(e) => {
-                  handleQuery(e);
+                onClick={() => {
+                  handleSend(item.text);
                   setMobile(false);
                 }}
                 className="w-full text-left p-2.5 rounded-xl bg-gray-800/40 hover:bg-gray-800 border border-gray-800 hover:border-gray-700 transition-all text-xs text-gray-300"

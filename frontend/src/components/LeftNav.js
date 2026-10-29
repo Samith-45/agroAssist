@@ -29,7 +29,7 @@ const SAMPLE_QUERIES = [
 ];
 
 function LeftNav() {
-  const { setShowSlide, showSlide, handleQuery, handleNewChat } = useContext(ContextApp);
+  const { setShowSlide, showSlide, handleSend, handleNewChat } = useContext(ContextApp);
 
   return (
     <aside
@@ -76,7 +76,7 @@ function LeftNav() {
             <button
               key={index}
               type="button"
-              onClick={handleQuery}
+              onClick={() => handleSend(item.text)}
               className="w-full text-left p-2.5 rounded-xl hover:bg-gray-800/80 border border-transparent hover:border-gray-700/60 transition-all duration-200 group cursor-pointer"
             >
               <div className="flex items-center gap-2 text-gray-400 group-hover:text-emerald-400 text-xs mb-1">

@@ -18,11 +18,18 @@ app.use(
 
 // Dynamic CORS configuration
 const allowedOrigins = env.ALLOWED_ORIGINS.split(",").map((o) => o.trim());
+const localhostRegex = /^https?:\/\/(localhost|127\.0\.0\.1)(:\d+)?$/;
+
 app.use(
   cors({
     origin: (origin, callback) => {
-      // Allow requests with no origin (like mobile apps, curl, or Docker internal calls)
-      if (!origin || allowedOrigins.includes("*") || allowedOrigins.includes(origin)) {
+      // Allow requests with no origin, localhost on any port, or explicitly configured origins
+      if (
+        !origin ||
+        localhostRegex.test(origin) ||
+        allowedOrigins.includes("*") ||
+        allowedOrigins.includes(origin)
+      ) {
         return callback(null, true);
       }
       return callback(new Error(`CORS blocked request from origin: ${origin}`));
