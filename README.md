@@ -7,7 +7,18 @@
 [![Gemini Engine](https://img.shields.io/badge/AI%20Engine-Gemini%202.5%20Flash-4285F4.svg)](https://ai.google.dev/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-AgroAssist is an enterprise-grade, full-stack digital agronomy system designed to empower farmers, agronomists, and agricultural extension officers with real-time, domain-guardrailed crop advisory services. Powered by Google Gemini 2.5 Flash multimodal vision and Server-Sent Events (SSE) streaming, the platform delivers visual leaf disease diagnostics, soil nutrient management, and seasonal crop scheduling across multiple regional languages.
+AgroAssist is an enterprise-grade, full-stack digital agronomy system designed to empower farmers, agronomists, and agricultural extension officers with real-time, domain-guardrailed crop advisory services. Powered by Google Gemini 2.5 Flash multimodal vision and Server-Sent Events (SSE) streaming, the platform delivers visual leaf disease diagnostics, interactive NPK fertilizer calculators, soil pH calibration, and seasonal crop scheduling across multiple regional languages.
+
+![AgroAssist Precision Agriculture Platform Banner](frontend/public/assets/hero-banner.png)
+
+---
+
+## 📸 Visual Project Overview & Core Modules
+
+| 🔬 1. AI Computer Vision Pathology | 🧪 2. Smart Soil & NPK Telemetry | 🌦️ 3. Seasonal & Drip Crop Planner |
+| :---: | :---: | :---: |
+| ![AI Leaf Disease Scanner](frontend/public/assets/disease-scan.png) | ![Soil Analytics and NPK Engine](frontend/public/assets/soil-analytics.png) | ![Seasonal Crop Planner](frontend/public/assets/seasonal-crops.png) |
+| **Multimodal Leaf & Pest Scanner:** Detects foliar chlorosis, fungal blight, rust pustules, and viral leaf curling from uploaded or drag-and-dropped field photos with confidence metrics and organic/chemical protocols. | **Interactive 4R Nutrient Calculator:** Computes exact per-acre Urea, DAP, and MOP fertilizer dosages with real-time soil pH acidity/alkalinity remediation badges (Lime vs. Gypsum). | **Agro-Climatic Zone Modeling:** Matches drought-tolerant Kharif, Rabi, and Zaid crop varieties to regional soil types (Black Vertisols, Alluvial, Red Loam) and optimizes drip irrigation. |
 
 ---
 
@@ -16,7 +27,7 @@ AgroAssist is an enterprise-grade, full-stack digital agronomy system designed t
 ```mermaid
 flowchart TD
     subgraph Client ["Client Layer (React SPA)"]
-        UI["Tailwind CSS UI / Web Client"]
+        UI["Tailwind CSS UI / Interactive Command Center"]
         STT["Web Speech Recognition (Voice Input)"]
         Upload["Crop Leaf / Pest Photo Upload"]
         SSE_Reader["SSE Stream Consumer (TextDecoder)"]
